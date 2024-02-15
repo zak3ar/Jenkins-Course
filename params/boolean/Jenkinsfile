@@ -9,14 +9,18 @@ pipeline {
         booleanParam(
             defaultValue: false,
             description: "Select ON or OFF",
-            name: BoolSellect
+            name: "boolSellect"
         )
     }
+    /* OR */
+    // parameters {
+    //     booleanParam(defaultValue: false, description: "Select ON or OFF", name: "boolSellect")
+    // }
 
     stages {
         stage("Demo"){
             steps {
-                echo "booleanParam is set to: ${params.BoolSellect}"
+                echo "booleanParam is set to: ${params.boolSellect}"
             }
         }
     }
