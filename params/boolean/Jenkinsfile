@@ -1,14 +1,22 @@
 pipeline {
     agent any
 
+    // parameters {
+    //     booleanParam(defaultValue: false, description: "Enable service?", name: "myBoolean")
+    // }
+
     parameters {
-        booleanParam(defaultValue: false, description: "Enable service?", name: "myBoolean")
+        boolPar(
+            defaultValue: false,
+            description: "Select ON or OFF",
+            name: BoolSellect
+        )
     }
 
     stages {
         stage("Demo"){
             steps {
-                echo "booleanParam is set to: ${params.myBoolean}"
+                echo "booleanParam is set to: ${params.BoolSellect}"
             }
         }
     }
