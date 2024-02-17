@@ -1,0 +1,50 @@
+pipeline{
+    // agent{
+    //     label "node"
+    // }
+    agent any
+
+    parameters {
+
+        string(defaultValue: "project-1", description: 'Confirm project name', name: 'InputProjectName')
+
+        choice(choices: ['EU-WEST-2A', 'EU-WEST-2B', 'EU-WEST-2C'], description: 'What AWS region?', name: 'SelectRegion')
+
+        booleanParam(defaultValue: false, description: 'Confirm deployment', name: 'ConfirmDeployment')
+
+
+    }
+
+    stages{
+        stage("User Input Configurations"){
+            steps{
+                echo "========User Input Configurations========"
+                eccho "Project Name is: ${params.InputProjectName}"
+                echo "Selected Region is: ${params.SelectRegion}"
+                echo "Start deployment: ${params.ConfirmDeployment}"
+            }
+            post{
+                // always{
+                //     echo "========always========"
+                // }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
+    }
+    post{
+        // always{
+        //     echo "========always========"
+        // }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
