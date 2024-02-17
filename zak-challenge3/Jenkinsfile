@@ -28,10 +28,10 @@ pipeline{
                 //     echo "========always========"
                 // }
                 success{
-                    echo "========END User Input Configurations========"
+                    echo "========SUCCESS======== User Input Configurations========"
                 }
                 failure{
-                    echo "========FAILED User Input Configurations========"
+                    echo "========FAILED======== User Input Configurations========"
                 }
             }
         }
