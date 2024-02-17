@@ -19,7 +19,7 @@ pipeline{
         stage("User Input Configurations"){
             steps{
                 echo "========START User Input Configurations========"
-                eccho "Project Name is: ${params.InputProjectName}"
+                echo "Project Name is: ${params.InputProjectName}"
                 echo "Selected Region is: ${params.SelectRegion}"
                 echo "Start deployment: ${params.ConfirmDeployment}"
             }
