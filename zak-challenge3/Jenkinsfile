@@ -8,7 +8,15 @@ pipeline{
 
         string(defaultValue: "project-1", description: 'Confirm project name', name: 'InputProjectName')
 
-        choice(choices: ['EU-WEST-2A', 'EU-WEST-2B', 'EU-WEST-2C'], description: 'What AWS region?', name: 'SelectRegion')
+        choice(
+            choices: [
+                'EU-WEST-2A',
+                'EU-WEST-2B',
+                'EU-WEST-2C'
+            ], 
+            description: 'What AWS region?', 
+            name: 'SelectRegion'
+        )
 
         booleanParam(defaultValue: false, description: 'Confirm deployment', name: 'ConfirmDeployment')
 
